@@ -1,19 +1,20 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+using namespace std;
 
 void print_grid(std::vector<std::string> sudoku);
 
 int main(){
-    std::vector<std::string> sudoku = {};
+    vector<string> sudoku = {};
 
-    std::cout << "Welcome to sudoku solver!\nPlease input the sudoku to be solved row by row! 0 for an empty square\n";
+    cout << "Welcome to sudoku solver!\nPlease input the sudoku to be solved row by row! 0 for an empty square\n";
 
     // Get input data from user
     for (int i = 0; i < 9; i++){
-        std::string row;
-        std::cout << "\nGive the " << i+1 << ". row of the sudoku: ";
-        std::cin >> row;
+        string row;
+        cout << "\nGive the " << i+1 << ". row of the sudoku: ";
+        cin >> row;
         sudoku.push_back(row);
     }
 
@@ -25,16 +26,16 @@ int main(){
 void print_grid(std::vector<std::string> sudoku){
     for (int i = 0; i < sudoku.size(); i++){
         if(i != 0 && i % 3 == 0){
-            std::cout << "\n----------------------";
+            cout << "\n----------------------";
         }
-        std::cout << "\n";
+        cout << "\n";
 
         for (int j = 0; j < sudoku[i].size(); j++){
             if(j != 0 && j % 3 == 0){
-                std::cout << "| ";
+                cout << "| ";
             }
-            std::cout << sudoku[i][j] << " ";
+            cout << sudoku[i][j] << " ";
         }
     }
-    std::cout << "\n";
+    cout << "\n";
 }
